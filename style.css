@@ -43,13 +43,7 @@ body{
 .test{
     position: static;
 }
-.show{
-    display: block;
-    opacity: 1;
-    margin: 0;
-    visibility: visible;
-    transform: translateY(0);
-}
+
 .light-mode{
     color: black;
 }
@@ -82,6 +76,9 @@ body{
     max-height: 30vw;
     width: 300vw;
     transition: all 1s;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 500px;
 }
 .slide-box{
     width: 100vw;
@@ -106,6 +103,51 @@ body{
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
+.header-nav-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.tab-list{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: solid 1px #ccc;
+
+}
+.tab{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tab-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+}
+.tab-content{
+    display: none;
+}
+.show{
+    display: block;
+    opacity: 1;
+    margin: 0;
+    visibility: visible;
+    transform: translateY(0);
+}
+.tab-btn{
+    display: block;
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    border-top: solid 3px skyblue;
+    border-radius: 4px;
+    border-bottom: solid 1px white;
+    margin-bottom: -1px;
+}
+
 
 @keyframes btn-ani2{
     0%{
