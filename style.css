@@ -1,0 +1,138 @@
+
+body, div{
+    margin: 0;
+}
+body{
+    height: 2000px;
+
+}
+
+.mo-con{
+    width : 100%;
+    height : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 5;
+    padding: 30px;
+    visibility: hiddne;
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(-200vw)
+}
+.sub-con{
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+}
+.login-con{
+    margin: 0;
+    padding-top: 50px;
+    width: 100%;
+    height: 200px;
+}
+.list-con{
+    padding-top: 50px;
+    opacity: 0;
+    transition: all 1s;
+    visibility: hiddne;
+    transform: translateY(-200vw)
+}
+.close{
+    display: none;
+}
+.test{
+    position: static;
+}
+.show{
+    display: block;
+    opacity: 1;
+    margin: 0;
+    visibility: visible;
+    transform: translateY(0);
+}
+.light-mode{
+    color: black;
+}
+.dark-mode{
+    color: white;
+}
+.nav-flex{
+    display: flex;
+}
+.navbar{
+    height: 50px;
+    position: fixed;
+    width: 100vw;
+    z-index: 5;
+}
+.dark-mode-btn{
+    text-align: center;
+    margin-right: 5px;
+    border-radius: 10px;
+    width: 80px;
+}
+.alert-box{
+    transition: all 1s;
+}
+.slide-main{
+    overflow: hidden;
+}
+.slide-con{
+    display: flex;
+    max-height: 30vw;
+    width: 300vw;
+    transition: all 1s;
+}
+.slide-box{
+    width: 100vw;
+}
+
+.slide-box > img{
+    width: 100%;
+    height: 100%;
+}
+.lorem{
+    margin: auto;
+    width: 400px;
+    height: 100px;
+    overflow-y: scroll;
+}
+.slide-btn-first:hover{
+    animation-name: shake;
+    animation-duration: 1s;
+}
+.slide-btn-second:hover{
+    animation-name: btn-ani2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn-ani2{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(45deg) scale(1.5);
+    }
+}
+
+@keyframes shake {
+    0%{
+        transform:rotate(0deg)
+    }
+    25%{
+        transform:rotate(-30deg)
+    }
+    50%{
+        transform: rotate(30deg);
+    }
+    75%{
+        transform:rotate(-30deg)
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}

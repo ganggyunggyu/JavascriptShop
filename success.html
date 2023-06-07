@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="email" class="inp">
+        <button type="submit" class="btn">로그인</button>
+    </form>
+
+    <script>
+        const inp = document.querySelector('.inp');    //input을 확인하기 위한 변수 생성
+        const btn = document.querySelector('.btn');   //btn에게 동작을 시키기 위한 변수 생성
+        btn.addEventListener('click',function(){
+            if(inp.value == ""){
+            alert('짜잔')
+        }else{
+            console.log('good')
+        }
+        })
+    </script>
+</body>
+</html>
