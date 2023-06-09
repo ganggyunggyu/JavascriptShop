@@ -4,7 +4,6 @@ body, div{
 }
 body{
     height: 2000px;
-
 }
 
 .mo-con{
@@ -14,7 +13,7 @@ body{
     background : rgba(0,0,0,0.5);
     z-index : 5;
     padding: 30px;
-    visibility: hiddne;
+    visibility: hidden;
     opacity: 0;
     transition: all 1s;
     transform: translateY(-200vw)
@@ -23,6 +22,9 @@ body{
     background: white;
     border-radius: 5px;
     padding: 30px;
+}
+.modal-back{
+    height: 100%;
 }
 .login-con{
     margin: 0;
@@ -66,7 +68,7 @@ body{
     width: 80px;
 }
 .alert-box{
-    transition: all 1s;
+    transition: all 0.5s linear;
 }
 .slide-main{
     overflow: hidden;
@@ -114,7 +116,6 @@ body{
     width: 100%;
     justify-content: space-around;
     border-bottom: solid 1px #ccc;
-
 }
 .tab{
     list-style: none;
@@ -140,14 +141,39 @@ body{
 }
 .tab-btn{
     display: block;
+    
     border-left: solid 1px #ccc;
     border-right: solid 1px #ccc;
     border-top: solid 3px skyblue;
     border-radius: 4px;
     border-bottom: solid 1px white;
     margin-bottom: -1px;
+    transition: all 0.5s;
 }
-
+.card-container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin-bottom: 20px;
+}
+.card-img-top{
+    height: 300px;
+    width: auto;
+}
+.btn-container{
+    padding: 10px;
+}
+.card-selector{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.card-selector > form{
+    width: 300px;
+}
 
 @keyframes btn-ani2{
     0%{
