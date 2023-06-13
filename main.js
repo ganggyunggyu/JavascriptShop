@@ -1,10 +1,8 @@
+
+
 var clickCount = 0;
 var timeCount = 5;
 let emailRegex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-let products = {
-  title: ['핑쿠티비', '아폴로 추억의,,', '카세트 테-잎'],
-  text: ['30,000 WON', '500 WON', '20,000 WON']
-}
 
 const listGr = document.querySelector('.list-con');
 const navBtn = document.querySelector('.nav-btn');
@@ -26,36 +24,55 @@ const slideBtnThird = document.querySelector('.slide-btn-third');
 const lorem =  document.querySelector('.lorem');
 const tab = document.querySelectorAll('.tab');
 const tabContent = document.querySelectorAll('.tab-content');
+const cardContainer = document.querySelector('.card-container');
 const cardTitle = document.querySelectorAll('.card-title');
 const cardText = document.querySelectorAll('.card-text');
 const selectOption = document.querySelectorAll('.select-op');
 const optionList = document.querySelectorAll('option');
+const cardAddBtn = document.querySelector('.card-add-btn');
+const products = [
+  {id: 0, title : '핑쿠티비', price:30000 },
+  {id: 1, title : '아폴로', price:300 },
+  {id: 2, title : '카세트 테-잎', price:30000 },
+];
 
-let addOptionValue = ['바지', '가방'];
+const optionDiv = (item) => {return `<option>${item}</option>`}
 
-
-let pantsSize = [24, 26, 28, 30, 32];
-let shirtSize = [90, 95, 100, 105, 110]
-
-selectOption[0].insertAdjacentHTML('beforeend','<option>'+addOptionValue[0]+'</option>');
-selectOption[0].insertAdjacentHTML('beforeend','<option>'+addOptionValue[1]+'</option>');
-
-selectOption[0].addEventListener('input', function(){
-  if(selectOption[0].value == '셔츠'){
-    selectOption[1].classList.add('show')
-    for(let i=0; i<shirtSize.length; i++){
-      selectOption[1].insertAdjacentHTML('beforeend','<option>'+ shirtSize[i] +'</option>')
-    }
-  }else if(selectOption[0].value !== '셔츠'){
-    selectOption[1].classList.remove('show');
-  }
-})
-
-
-for(let i=0; i<cardTitle.length; i++){
-  cardTitle[i].innerHTML = products.title[i];
-  cardText[i].innerHTML = products.text[i];
+function productDiv(item1, item2){
+  return `<div class="col-sm-4">
+  <img src="https://via.placeholder.com/600" class="w-100">
+  <h5>${item1}</h5>
+  <span>단-돈</span>
+  <p>${item2}</p>
+  </div>`
 }
+
+setTimeout(function(){
+  console.log('안녕')
+}, 5000)
+
+for(let i=0; i < products.length; i++){
+  console.log(products[i].title)
+  cardContainer.insertAdjacentHTML("beforeend", productDiv(products[i].title, products[i].price));
+}
+
+let addOptionValue = ['모자', '셔츠', '바지', '가방'];
+
+for(let i=0; i<addOptionValue.length; i++){
+  selectOption[0].insertAdjacentHTML('beforeend',optionDiv(addOptionValue[i]));
+}
+
+cardAddBtn.addEventListener('click', function(){
+  fetch('https://codingapple1.github.io/js/more1.json')
+  .then(res => res.json())
+  .then(function(data){
+    console.log(data)
+    for(let i=0; i < products.length; i++){
+      cardContainer.insertAdjacentHTML('beforeend', productDiv(data[i].title, data[i].price))
+    }
+  })
+}
+)
 
 setInterval(function(){
     if(timeCount  == -1){
@@ -104,7 +121,7 @@ modalBg.addEventListener('click',function(e){
 navBtn.addEventListener('click',function(){show(listGr)});
 navBtn.addEventListener('click', function(){
 loginContainer.classList.toggle('pt-0');
-})
+});
 loginSubmitBtn.addEventListener('click', function(){inputCheck(idInput, pwInput)});
 darkModeBtn.addEventListener('click',function(){
 clickCount ++;
@@ -122,7 +139,7 @@ clickCount ++;
         darkModeBtn.classList.add('bg-dark');
         darkModeBtn.classList.remove('bg-light');
     }
-})
+});
 slideBtnFirst.addEventListener('click', function(){
 slideContainer.style.transform = 'translateX(0vw)'
 });
@@ -144,7 +161,7 @@ lorem.addEventListener('scroll', function(){
       alert('good');
     };
   });
-  
 tab[0].addEventListener('click',function(){addTabContent(tab[0],tabContent[0])});
 tab[1].addEventListener('click',function(){addTabContent(tab[1],tabContent[1])});
 tab[2].addEventListener('click',function(){addTabContent(tab[2],tabContent[2])});
+

@@ -155,8 +155,10 @@ body{
     text-align: center;
     justify-content: center;
     align-items: center;
-    height: 500px;
     margin-bottom: 20px;
+}
+.card-container > div{
+    padding: 20px;
 }
 .card-img-top{
     height: 300px;
